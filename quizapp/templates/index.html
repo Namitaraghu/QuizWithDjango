@@ -1,0 +1,12 @@
+<h1>Quiz</h1>
+<form action='/quiz/result' method='POST'>{% csrf_token %}
+    <ol>
+        {% for seq in ques %}
+            <li>{{seq.question}}</li>
+                 <br><input type='radio' value='{{seq.choice1}}' name='{{seq.question}}' />{{seq.choice1}}</br>
+                 <br><input type='radio' value='{{seq.choice2}}' name='{{seq.question}}' />{{seq.choice2}}</br>
+                 <br><input type='radio' value='{{seq.choice3}}' name='{{seq.question}}' />{{seq.choice3}}</br>
+        {% endfor %}
+    </ol>
+    <input type="submit" value="submit" />
+</form>
